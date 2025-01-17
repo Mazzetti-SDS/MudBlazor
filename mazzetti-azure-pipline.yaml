@@ -3,18 +3,10 @@
 # Add steps that publish symbols, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
-parameters:
-  - name: inputBuildNumber
-    displayName: 'Build Number (format {MudBlazor Tag #}.{Mazzetti Version Number})'
-    type: string
-    default: 'x.x.x.m'
-
 trigger:
   tags:
     include:
      - mazzetti/*
-
-name: ${{ parameters.inputBuildNumber }}
 
 pool:
   vmImage: 'windows-latest'
@@ -26,6 +18,13 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: Bash@3
+  displayName: Set Build Number
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "##vso[build.updatebuildnumber]$(echo $(Build.SourceBranch) | awk -F'/' '{print $NF}')"
+
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
