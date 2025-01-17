@@ -9,6 +9,11 @@ parameters:
     type: string
     default: 'x.x.x.m'
 
+trigger:
+  tags:
+    include:
+     - mazzetti/*
+
 name: ${{ parameters.inputBuildNumber }}
 
 pool:
