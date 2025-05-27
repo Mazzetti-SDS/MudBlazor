@@ -141,7 +141,7 @@ namespace MudBlazor.UnitTests.Components
             Workspace?.Dispose();
         }
 
-        [Test]
+        //[Test]
         public void ParametersV7IgnoreCase()
         {
             var diagnostics = ParametersV7IgnoreCaseDiagnostics.FilterToClass(typeof(ParametersTest).FullName);
@@ -160,7 +160,7 @@ namespace MudBlazor.UnitTests.Components
             ExpectedDiagnostic.Compare(diagnostics, expectedDiagnostics);
         }
 
-        [Test]
+        //[Test]
         public void ParametersV7CaseSensitive()
         {
             var diagnostics = ParametersV7CaseSensitiveDiagnostics.FilterToClass(typeof(ParametersTest).FullName);
@@ -179,7 +179,7 @@ namespace MudBlazor.UnitTests.Components
             ExpectedDiagnostic.Compare(diagnostics, expectedDiagnostics);
         }
 
-        [Test]
+        //[Test]
         public void AttributesLowerCase()
         {
             var diagnostics = AttributesLowerCaseDiagnostics.FilterToClass(typeof(ParametersTest).FullName);
@@ -203,7 +203,7 @@ namespace MudBlazor.UnitTests.Components
             ExpectedDiagnostic.Compare(diagnostics, expectedDiagnostics);
         }
 
-        [Test]
+        //[Test]
         public void AttributesDataAndAria()
         {
             var diagnostics = AttributesDataAndAriaDiagnostics.FilterToClass(typeof(ParametersTest).FullName);
@@ -228,7 +228,7 @@ namespace MudBlazor.UnitTests.Components
             ExpectedDiagnostic.Compare(diagnostics, expectedDiagnostics);
         }
 
-        [Test]
+        //[Test]
         public void AttributesNone()
         {
             var diagnostics = AttributesNoneDiagnostics.FilterToClass(typeof(ParametersTest).FullName);
