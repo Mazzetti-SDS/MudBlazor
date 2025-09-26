@@ -4,6 +4,8 @@
 @inherits MudComponentBase
 @inject InternalMudLocalizer Localizer
 
+@if (Visible)
+{
 <div class="mud-chip-container"
      id="@_chipContainerId"
      @onkeydown="@HandleKeyDownAsync">
@@ -54,3 +56,4 @@
         </span>
     </div>
 </div>
+}

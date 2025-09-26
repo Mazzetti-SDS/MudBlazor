@@ -332,6 +332,13 @@ public partial class MudChip<T> : MudComponentBase, IAsyncDisposable
     [Parameter]
     public EventCallback<bool> SelectedChanged { get; set; }
 
+    /// <summary>
+    /// The visibility of this chip.
+    /// </summary>
+    [Parameter]
+    [Category(CategoryTypes.Chip.Appearance)]
+    public bool Visible { get; set; } = true;
+
     internal T? GetValue()
     {
         if (typeof(T) == typeof(string) && Value is null && Text is not null)
